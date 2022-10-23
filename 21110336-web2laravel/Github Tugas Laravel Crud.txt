@@ -1,0 +1,3 @@
+// Tugas CRUD (db migration + seeder)
+
+https://github.com/madvier83/laravel-crud
