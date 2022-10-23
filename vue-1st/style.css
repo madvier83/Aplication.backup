@@ -1,0 +1,23 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+.navbar li {
+    display: inline-block;
+}
+nav {
+    margin-top: 40px;
+}
+.container
+{
+    padding: 20px 40px;
+}
+.rounded-circle{
+    border-radius: 50%;
+}
+a{
+    text-decoration: none;
+    padding: 10px;
+}
+.active{
+    background: aqua;
+}

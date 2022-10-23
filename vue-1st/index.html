@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="./style.css">
+    <title>Vue JS</title>
+</head>
+<body>
+    
+    <div id="app">
+
+        <!-- <nav>
+            <ul class="navbar">
+                <li><a :class="{active:menu==='test1'}" v-on:click.prevent="changePage('test1')" href="#">Test1</a></li>
+                <li><a :class="{active:menu==='test2'}" v-on:click.prevent="changePage('test2')" href="#">Test2</a></li>
+                <li><a :class="{active:menu==='test3'}" v-on:click.prevent="changePage('test3')" href="#">Test3</a></li>
+                <li><a target="blank" href="https://github.com/madvier83/">GitHub</a></li>
+            </ul>
+        </nav> -->
+        <!-- <router-link to="/">Home</router-link>
+        <router-link to="/about">About</router-link>
+
+        <router-view></router-view> -->
+
+        <div class="container" style="text-align: justify; max-width: 800px;">
+            <img :src="img" :alt="img" width="70px" class="rounded-circle">
+            <h1 v-if="materi.length >= 1">Learning {{ materi }}</h1>
+            <h1 v-else style="color: blue">Turu z z z ...</h2>
+            <h3>{{ getName() }}</h3>
+
+            <p>Name : <input type="text" v-model="name"></p>
+            <p>Im learning : 
+                <label><input type="checkbox" value="Vue.js" v-model="materi">Vue.js</label>
+                <label><input type="checkbox" value="React" v-model="materi">React</label>
+                <label><input type="checkbox" value="Angular" v-model="materi">Angular</label>
+            </p> 
+
+            <template v-if="materi.includes('Vue.js')">
+                <h3>Class Vue.js</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae cumque blanditiis voluptatem fuga labore, iure ratione, voluptates deserunt molestiae rerum iste temporibus. Mollitia neque voluptas, ullam aliquam corrupti ratione ex.</p>
+            </template>
+            <template v-if="materi.includes('React')">
+                <h3>Class React</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reiciendis nobis error omnis aut, nisi consequuntur esse iure id dolorum facilis quis ipsam dolores alias aliquam minus cupiditate voluptatum blanditiis eos!</p>
+            </template>
+            <template v-if="materi.includes('Angular')">
+                <h3>Class Angular</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem illo suscipit numquam quo officia harum perspiciatis tempore tenetur omnis qui, laborum laudantium iusto eius esse vitae voluptas pariatur. Fugiat, vitae?</p>
+            </template>
+
+            <hr>
+            
+            <template v-if="bear>0.9">
+                <h5 >The bear has appeared ʕ•ᴥ•ʔ  <button @click="greet(name)">Say hello</button><button @click="bear=0">Run</button></h5>
+            </template>
+            <h5 v-else>So empty . . . <button v-on:click="bear=Math.random()">Walk...</button></h5>
+            <small v-bind:style="{ color: dangerLevel(bear) }">{{ bear }}</small><br><br>
+
+            <hr>
+
+            <p>Submit</p>
+            <input type="text" placeholder="Add new class" v-on:keyup.enter="submit">
+
+            <br>
+            <p>Looping . . boring</p>
+            <ul>
+                <li v-for="x in 3">{{ x }}</li>
+            </ul>
+            
+            <p>Looping array w index {{ testArray }}</p>
+            <ul>
+                <li v-for="(item, i) of testArray">{{ i+1 }}. {{ item }}</li>
+            </ul>
+
+            <p>Looping array w filter {{ numbers }}</p>
+            <ul>
+                <li v-for="x in checkEven(numbers)">{{ x }}</li>
+            </ul>
+            
+            <p>Looping object</p>
+            <ul>
+                <li v-for="(value,i) in book">{{ i }} : {{ value }}</li>
+            </ul>
+            <p>copyright &copy; 2022</p>
+        </div>
+    
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/vue-router@4"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
